@@ -1,3 +1,5 @@
+import math
+
 def in_range(nums, lowest, highest):
     """Print numbers inside range.
 
@@ -16,6 +18,17 @@ def in_range(nums, lowest, highest):
     """
 
     # YOUR CODE HERE
+    min = math.inf
+    max = -math.inf
+
+    for num in nums:
+        if num >= lowest and min == math.inf:
+            min = num
+        elif num <= highest and num >= lowest:
+            max = num
+
+    print(f"{min} fits")
+    print(f"{max} fits")
 
 
-in_range([10, 20, 30, 40, 50], 15, 30)            
+in_range([10, 20, 30, 40, 50], 15, 30)
